@@ -42,3 +42,7 @@ h2 {
   align-items: center;
   margin-bottom: 20px;
 }
+
+.search-box-label {
+  display: block;
+}
