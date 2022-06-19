@@ -12,9 +12,33 @@ body {
   line-height: 1.5;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+h2 {
+  margin: 0 0 0 10px ;
+}
+
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.country-name {
+  font-weight: 700;
+  margin: 0 10px;
+}
+
+.country-name-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
