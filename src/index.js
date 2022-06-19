@@ -23,10 +23,7 @@ function onInputType(event) {
       })
       .then(countries => {
         if (countries.status === 404) {
-          Notify.failure('Oops, there is no country with that name', {
-            position: 'center-top',
-          });
-          return;
+          throw 404;
         }
         const countriesCount = countries.length;
 
@@ -42,7 +39,15 @@ function onInputType(event) {
 
         insertMarkupInCard(makeCountryCardMarkup(countries));
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        if (error === 404) {
+          Notify.failure('Oops, there is no country with that name', {
+            position: 'center-top',
+          });
+        } else {
+          console.log(error);
+        }
+      });
   }
   cleanMarkup();
 }
